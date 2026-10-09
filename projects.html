@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects - Zi Qi Liow</title>
+  
+  <!-- Favicon / Tab Icon -->
+  <link rel="icon" type="image/png" href="website_icon.png">
+  
+  <!-- Google Fonts: Instrument Serif & Raleway -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Raleway:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Header & Navigation Bar -->
+  <header class="header-container">
+    <div class="profile-header">
+      <div class="profile-photo">
+        <img src="profile.jpg" alt="Zi Qi Liow">
+      </div>
+      <div class="profile-info">
+        <h1>Zi Qi Liow</h1>
+        <p class="contact-info">
+          <a href="mailto:ziqiliow789@gmail.com">ziqiliow789@gmail.com</a> | 
+          <a href="mailto:zl3557@columbia.edu">zl3557@columbia.edu</a><br>
+          New York, NY
+        </p>
+        <div class="social-icons">
+          <!-- LinkedIn Image Link -->
+          <a href="https://www.linkedin.com/in/ziqiliow/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <img src="linkedin_logo.png" alt="LinkedIn" class="header-social-img">
+          </a>
+          <!-- CV Image Link -->
+          <a href="https://drive.google.com/file/d/1fkq90Uz7b1A3cPRXqcvSa09ajLrAJp3x/view?usp=sharing" target="_blank" rel="noopener noreferrer" aria-label="CV">
+            <img src="cv_logo.png" alt="CV" class="header-social-img">
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Full Width Navigation Bar -->
+    <nav class="navbar">
+      <div class="nav-content">
+        <a href="index.html">Home</a>
+        <a href="projects.html" class="active">Projects</a>
+        <a href="https://medium.com/@ziqiliow" target="_blank" rel="noopener noreferrer">Writing</a>
+      </div>
+    </nav>
+  </header>
+
+  <div class="container">
+    
+    <!-- Selected Projects Section -->
+    <section id="projects" class="section">
+      <div class="section-header-group">
+        <h2>Selected Projects</h2>
+        <p class="section-subtext">Click on the image or title to learn more about each project :)</p>
+      </div>
+      
+      <!-- Project 1: Audio-Haptic -->
+      <div class="project-card">
+        <div class="project-image-placeholder clickable" onclick="openModal('audioHapticModal')">
+          <img src="audiohaptic_icon.png" alt="Audio-haptic perception icon">
+        </div>
+        <div class="project-details">
+          <div class="project-title-row">
+            <h3 class="project-title clickable" onclick="openModal('audioHapticModal')">Audio-haptic perception for blind and low-vision users</h3>
+            <span class="project-year">2025 - Present</span>
+          </div>
+          <div class="project-meta">NSF-ARNI / Columbia University / CUNY</div>
+          <div class="project-role">Research Engineer</div>
+          <p class="project-description">
+            <a href="javascript:void(0)" onclick="openModal('posterImageModal')">poster</a>
+          </p>
+        </div>
+      </div>
+
+      <!-- Project 2: Play, Pause, Recover -->
+      <div class="project-card">
+        <div class="project-image-placeholder clickable" onclick="openModal('pppModal')">
+          <img src="PPP_icon.png" alt="Play, Pause, Recover icon">
+        </div>
+        <div class="project-details">
+          <div class="project-title-row">
+            <h3 class="project-title clickable" onclick="openModal('pppModal')">Play, Pause, Recover</h3>
+            <span class="project-year">2026</span>
+          </div>
+          <div class="project-meta">Columbia University</div>
+          <div class="project-role">Co-Author</div>
+          <p class="project-description">
+            <a href="https://drive.google.com/file/d/1htiqvMEo8HlAUTI6R_zsqLbRY6SJNgIN/view?usp=sharing" target="_blank" rel="noopener noreferrer">pdf</a>
+          </p>
+        </div>
+      </div>
+
+      <!-- Project 3: Social Media -->
+      <div class="project-card">
+        <div class="project-image-placeholder clickable" onclick="openModal('socialMediaModal')">
+          <img src="socialmedia_icon.png" alt="Improving social media icon">
+        </div>
+        <div class="project-details">
+          <div class="project-title-row">
+            <h3 class="project-title clickable" onclick="openModal('socialMediaModal')">Improving social media for democratic discourse</h3>
+            <span class="project-year">2026</span>
+          </div>
+          <div class="project-meta">Columbia University</div>
+          <div class="project-role">Co-Corresponding Author</div>
+          <p class="project-description">pre-print coming soon</p>
+        </div>
+      </div>
+
+      <!-- Project 4: CitizenAI -->
+      <div class="project-card">
+        <div class="project-image-placeholder clickable" onclick="openModal('citizenAiModal')">
+          <img src="citizenai_icon.png" alt="CitizenAI icon">
+        </div>
+        <div class="project-details">
+          <div class="project-title-row">
+            <h3 class="project-title clickable" onclick="openModal('citizenAiModal')">CitizenAI</h3>
+            <span class="project-year">2026 - Present</span>
+          </div>
+          <div class="project-meta">NSF / Columbia University / CS3</div>
+          <div class="project-role">Research Fellow</div>
+          <p class="project-description">
+            <a href="https://www.canva.com/design/DAGhzsCdu3I/_GArmfffv_qu-0edyMiFbg/view?utm_content=DAGhzsCdu3I&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hb4d98f7721" target="_blank" rel="noopener noreferrer">slides</a>
+          </p>
+        </div>
+      </div>
+
+      <!-- Project 5: Sori -->
+      <div class="project-card">
+        <div class="project-image-placeholder clickable" onclick="openModal('soriModal')">
+          <img src="sori_icon.png" alt="Sori icon">
+        </div>
+        <div class="project-details">
+          <div class="project-title-row">
+            <h3 class="project-title clickable" onclick="openModal('soriModal')">Sori — AI for pediatric speech therapy</h3>
+            <span class="project-year">2025</span>
+          </div>
+          <div class="project-meta">Columbia Business School AI Impact Competition</div>
+          <div class="project-role">Top 15% Finalist</div>
+          <p class="project-description">
+            <a href="javascript:void(0)" onclick="openModal('soriDemoModal')">demo</a>
+          </p>
+        </div>
+      </div>
+
+      <!-- Project 6: ModU -->
+      <div class="project-card">
+        <div class="project-image-placeholder clickable" onclick="openModal('modUModal')">
+          <img src="modu_icon.png" alt="ModU icon">
+        </div>
+        <div class="project-details">
+          <div class="project-title-row">
+            <h3 class="project-title clickable" onclick="openModal('modUModal')">ModU — AI for PTSD</h3>
+            <span class="project-year">2024</span>
+          </div>
+          <div class="project-meta">Global Learning Case Competition (GLCC)</div>
+          <div class="project-role">1st Place / 72 teams and 30+ countries</div>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <!-- MODALS SECTION -->
+
+  <!-- Modal 0: Audio-Haptic Poster Image Pop-Up -->
+  <div id="posterImageModal" class="modal" role="dialog" aria-modal="true" onclick="closeModal('posterImageModal')">
+    <div class="modal-content" onclick="event.stopPropagation()">
+      <span class="close-btn" onclick="closeModal('posterImageModal')">&times;</span>
+      <img src="audiohaptic_poster.jpg" alt="Audio-Haptic Poster">
+    </div>
+  </div>
+
+  <!-- Modal 0.5: Sori Demo Video Pop-Up -->
+  <div id="soriDemoModal" class="modal" role="dialog" aria-modal="true" onclick="closeModal('soriDemoModal')">
+    <div class="modal-content video-modal-content" onclick="event.stopPropagation()">
+      <span class="close-btn" onclick="closeModal('soriDemoModal')">&times;</span>
+      <video id="soriVideo" controls style="width: 100%; border-radius: 6px;">
+        <source src="sori_demo.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </div>
+
+  <!-- Modal 1: Audio-Haptic -->
+  <div id="audioHapticModal" class="modal" role="dialog" aria-modal="true" onclick="closeModal('audioHapticModal')">
+    <div class="modal-content project-modal-content" onclick="event.stopPropagation()">
+      <span class="close-btn" onclick="closeModal('audioHapticModal')">&times;</span>
+      <h2>Audio-haptic perception for blind and low-vision users</h2>
+      <div class="modal-meta-bar">
+        <span><strong>Role:</strong> Research Engineer</span> | 
+        <span><strong>Venue:</strong> NSF-ARNI / Columbia / CUNY</span> | 
+        <span><strong>Timeline:</strong> 2025 - Present</span>
+      </div>
+      <div class="modal-body">
+        <p>
+          This research is funded through the AI Institute for Artificial and Natural Intelligence (ARNI), a $20 million multidisciplinary initiative established by the National Science Foundation (NSF).
+        </p>
+        <p>
+          <strong>PI:</strong> Kathleen McKeown, Columbia<br>
+          <strong>Co-PIs:</strong> Brian A. Smith, Columbia; Tatiana Aloi Emmanouil, CUNY; Nikolaus Kriegeskorte, Columbia; Carl Vondrick, Columbia
+        </p>
+        <h3>Overview</h3>
+        <p>
+          A picture is worth a thousand words, but only if the viewer can experience it. Our project aims to help blind and low-vision (BLV) people experience works of art, including their sensory and semantic dimensions, their emotional valence, the artist’s intentions, and other contextual information. Our project brings together researchers from vision, language, and interaction design, all informed by cognitive science, to develop AI Art Immersion for the visually impaired. Our work is inspired by the human visual system, which gives us an instant sense of our surroundings and lets us explore a complex scene interactively with eye movements and internal shifts of attention, enabling us to rapidly grasp the layout, the objects and characters present, and how the elements relate to each other.
+        </p>
+        <h3>Partnerships</h3>
+        <ul>
+          <li>Helen Keller Services for the Blind</li>
+          <li>National Gallery of Art</li>
+          <li>New York Hall of Science</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 2: Play, Pause, Recover -->
+  <div id="pppModal" class="modal" role="dialog" aria-modal="true" onclick="closeModal('pppModal')">
+    <div class="modal-content project-modal-content" onclick="event.stopPropagation()">
+      <span class="close-btn" onclick="closeModal('pppModal')">&times;</span>
+      <h2>Play, Pause, Recover</h2>
+      <div class="modal-meta-bar">
+        <span><strong>Role:</strong> Co-Author</span> | 
+        <span><strong>Venue:</strong> Columbia University</span> | 
+        <span><strong>Year:</strong> 2026</span>
+      </div>
+      <div class="modal-body">
+        <h3>Overview</h3>
+        <p>
+          Short-term mental fatigue frequently disrupts player engagement in puzzle games. While Dynamic Difficulty Adjustment (DDA) is commonly used to maintain game flow, its invisible modifications to game parameters can compromise player autonomy. Conversely, psychological research shows that micro-breaks restore cognitive capacity in demanding tasks, yet no study has directly compared DDA and diegetic micro-breaks in an interactive puzzle environment. We evaluated both interventions using a modified clone of The New York Times Spelling Bee in a within-subjects study (N = 9). Results indicate that diegetic micro-breaks significantly enhance reported refreshment, autonomy, and perceived fairness, whereas DDA sustains engagement at the expense of player control.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 3: Social Media -->
+  <div id="socialMediaModal" class="modal" role="dialog" aria-modal="true" onclick="closeModal('socialMediaModal')">
+    <div class="modal-content project-modal-content" onclick="event.stopPropagation()">
+      <span class="close-btn" onclick="closeModal('socialMediaModal')">&times;</span>
+      <h2>Improving social media for democratic discourse</h2>
+      <div class="modal-meta-bar">
+        <span><strong>Role:</strong> Co-Corresponding Author</span> | 
+        <span><strong>Venue:</strong> Columbia University</span> | 
+        <span><strong>Year:</strong> 2026</span>
+      </div>
+      <div class="modal-body">
+        <h3>Overview</h3>
+        <p>
+          Designing social media platforms to foster healthy democratic discourse is a critical challenge driven by the limitations of today's engagement-focused, ad-revenue model. To spark cross-disciplinary innovation beyond these profit-driven incentives, this white paper introduces a set of actionable "mechanisms" designed to reduce harms like misinformation and political polarization. Ultimately, this paper serves as both an entry point for public and expert debate and a proposal of designs aimed at rebuilding a digital public sphere that enhances collective intelligence.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 4: CitizenAI -->
+  <div id="citizenAiModal" class="modal" role="dialog" aria-modal="true" onclick="closeModal('citizenAiModal')">
+    <div class="modal-content project-modal-content" onclick="event.stopPropagation()">
+      <span class="close-btn" onclick="closeModal('citizenAiModal')">&times;</span>
+      <h2>CitizenAI</h2>
+      <div class="modal-meta-bar">
+        <span><strong>Role:</strong> Research Fellow</span> | 
+        <span><strong>Venue:</strong> NSF / Columbia / CS3 / Rutgers</span> | 
+        <span><strong>Timeline:</strong> 2026 - Present</span>
+      </div>
+      <div class="modal-body">
+        <h3>Overview</h3>
+        <p>
+          CitizenAI is a 3-year, $1.5M NSF-funded initiative by Columbia University’s Trust Collaboratory, CS3, and Rutgers University. The project creates a bottom-up model for responsible AI development, giving the public direct input into how AI tools are built and deployed.
+        </p>
+        <h3>Key Aims & Focus</h3>
+        <ul>
+          <li><strong>Participatory Co-Creation:</strong> Partner with civic organizations, advocacy groups, local businesses, artists, and residents through a participatory design process to build <em>teLLMe</em>, a community-based conversational AI engagement tool.</li>
+          <li><strong>Human-AI Interaction & Public Trust:</strong> Conduct interdisciplinary research across social science, engineering, and data science to understand human-AI interactions and build public trust in technology.</li>
+          <li><strong>Responsible AI & Governance:</strong> Generate foundational insights to inform responsible AI policy, tech governance, urban data ethics, and the future of human-centered technology.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 5: Sori -->
+  <div id="soriModal" class="modal" role="dialog" aria-modal="true" onclick="closeModal('soriModal')">
+    <div class="modal-content project-modal-content" onclick="event.stopPropagation()">
+      <span class="close-btn" onclick="closeModal('soriModal')">&times;</span>
+      <h2>Sori — AI for pediatric speech therapy</h2>
+      <div class="modal-meta-bar">
+        <span><strong>Role:</strong> Top 15% Finalist</span> | 
+        <span><strong>Venue:</strong> Columbia Business School AI Impact Competition</span> | 
+        <span><strong>Year:</strong> 2025</span>
+      </div>
+      <div class="modal-body">
+        <h3>Overview</h3>
+        <p>
+          Columbia Business School hosts an AI Impact Competition annually, a month-long start-up challenge to propose a pre-launch idea. Finalists pitch in front of VC investors and professionals from a16z, Bain, Google Gradient Ventures, and more. Our team entered the health care track. The task was to propose an AI-driven solution for your given track, with emphasis on the technical approach.
+        </p>
+        <h3>Backstory</h3>
+        <p>
+          In the summer of 2021, I interned at a speech therapy clinic in Hong Kong, where I spent three months training under speech-language pathologists to support children with Selective Mutism and Social Anxiety Disorder. I observed therapy sessions, led behavior reinforcement exercises, and helped design exposure therapy activities tailored to each child. Over time, I noticed a clear gap: once the children left our clinic, there was no structured way to monitor their speech progress or reinforce therapeutic techniques at home. The system lacked a structured way to meaningfully connected outside of sessions.
+        </p>
+        <blockquote class="modal-prompt-quote">
+          How should we design clinician-AI co-intelligence to personalize speech therapy?
+        </blockquote>
+        <p>
+          Our process involved extensive literature review, collaborative ideation sessions, user interviews with speech-language-pathologists, iterative prototyping, and feedback sessions about clinical integration with mentors.
+        </p>
+        <h3>Our Solution</h3>
+        <p>
+          Sori is an AI-powered storybook app that detects speech abnormalities and tracks a child's performance over time. Children use the AI chatbot to generate their own story plots and characters, creating personalized storybooks embedded with phonemic structures designed to assess speech patterns seamlessly. After each reading session, results are sent directly to the child’s speech-language pathologist, enabling more tailored and responsive treatment plans. Ultimately, Sori makes the therapy process more fun and personalized to each child.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 6: ModU -->
+  <div id="modUModal" class="modal" role="dialog" aria-modal="true" onclick="closeModal('modUModal')">
+    <div class="modal-content project-modal-content" onclick="event.stopPropagation()">
+      <span class="close-btn" onclick="closeModal('modUModal')">&times;</span>
+      <h2>ModU — AI for PTSD</h2>
+      <div class="modal-meta-bar">
+        <span><strong>Role:</strong> 1st Place (72 teams, 30+ countries)</span> | 
+        <span><strong>Venue:</strong> Global Learning Case Competition (GLCC)</span> | 
+        <span><strong>Year:</strong> 2024</span>
+      </div>
+      <div class="modal-body">
+        <h3>Overview</h3>
+        <p>
+          Hosted by the University of Toronto, the Global Learning Case Competition (GLCC) invites students globally to collaborate on innovative solutions for pressing global challenges. Over 72 hours, participants work in teams, culminating in a final presentation evaluated by a panel of judges. Our prompt was: “What is one innovative way that artificial intelligence can be used for positive social change in your discipline(s) or communities?”
+        </p>
+        <h3>Backstory</h3>
+        <p>
+          Post-Traumatic Stress Disorder (PTSD) is a mental and behavioral disorder that can develop from directly or indirectly experiencing a traumatic event.
+        </p>
+        <p>PTSD is characterized by:</p>
+        <ul>
+          <li>Re-experiencing of the traumatic event(s)</li>
+          <li>Persistent emotional and physiological arousal in response to reminders of the trauma</li>
+          <li>Anxiety in anticipation of the next panic attack</li>
+        </ul>
+        <p>
+          In the physical world, there are ways to manage symptoms by avoiding certain locations, people, or objects. But in the digital world, where content is constant and unfiltered, it only takes one triggering ad, video, photo to activate a panic response in PTSD patients. As a consequence, they may avoid digital spaces (such as social media and websites) to protect themselves, which can exclude them from participation in their personal and work environments.
+        </p>
+        <blockquote class="modal-prompt-quote">
+          How should we re-design digital spaces to help people with PTSD navigate content safely?
+        </blockquote>
+        <h3>Our Solution</h3>
+        <p>
+          A plugin extension for text, audio, and visuals—designed with clinical support to help modulate a patient’s exposure to online triggers.
+        </p>
+        <ol>
+          <li><strong>Step 1: Trigger Identification</strong> — Patients work with a psychiatrist to identify their personal triggers.</li>
+          <li><strong>Step 2: LLM Model Training</strong> — An AI model is trained on diverse datasets to detect and categorize triggers across text, audio, images, and video.</li>
+          <li><strong>Step 3: Real-Time Web Scraping</strong> — The plugin continuously scans incoming digital content.</li>
+          <li><strong>Step 4: Content Modulation</strong> — As users interact with content, the plugin responds in real time. They can customize exposure levels (e.g., 90%, 50%, 10%). Based on these settings, the tool can blur, warn, or remove triggering material from their feed.</li>
+          <li><strong>Step 5: Patient Dashboard</strong> — ModU's interactive dashboard allows patients to track and reflect on their therapy progress. With the clinician in the loop, patients can gradually increase their exposure to triggering content over time, giving the power of re-integration back into the patient's hands.</li>
+        </ol>
+        <p>
+          Through clinician-AI collaboration, our tool is personalized to one's unique triggers, empowering PTSD patients to navigate online spaces with confidence and security.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function openModal(id) {
+      const modal = document.getElementById(id);
+      if (modal) {
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+      }
+    }
+
+    function closeModal(id) {
+      const modal = document.getElementById(id);
+      if (modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+        if (id === 'soriDemoModal') {
+          const video = document.getElementById('soriVideo');
+          if (video) video.pause();
+        }
+      }
+    }
+
+    /* Close Modals on Escape Key Press */
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape') {
+        const modals = document.querySelectorAll('.modal');
+        modals.forEach(modal => {
+          modal.style.display = 'none';
+        });
+        document.body.style.overflow = 'auto';
+        const video = document.getElementById('soriVideo');
+        if (video) video.pause();
+      }
+    });
+  </script>
+
+</body>
+</html>

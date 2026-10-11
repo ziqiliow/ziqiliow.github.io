@@ -6,14 +6,15 @@
   <title>Projects - Zi Qi Liow</title>
   
   <!-- Favicon / Tab Icon -->
-  <link rel="icon" type="image/png" href="website_icon.png">
+  <link rel="icon" type="image/png" href="/website_icon.png">
   
   <!-- Google Fonts: Instrument Serif & Raleway -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Raleway:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
   
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="/style.css">
+  <link rel="canonical" href="https://ziqiliow.com/projects">
 </head>
 <body>
 
@@ -21,7 +22,7 @@
   <header class="header-container">
     <div class="profile-header">
       <div class="profile-photo">
-        <img src="profile.jpg" alt="Zi Qi Liow">
+        <img src="/profile.jpg" alt="Zi Qi Liow">
       </div>
       <div class="profile-info">
         <h1>Zi Qi Liow</h1>
@@ -33,11 +34,11 @@
         <div class="social-icons">
           <!-- LinkedIn Image Link -->
           <a href="https://www.linkedin.com/in/ziqiliow/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-            <img src="linkedin_logo.png" alt="LinkedIn" class="header-social-img">
+            <img src="/linkedin_logo.png" alt="LinkedIn" class="header-social-img">
           </a>
           <!-- CV Image Link -->
-          <a href="https://drive.google.com/file/d/1fkq90Uz7b1A3cPRXqcvSa09ajLrAJp3x/view?usp=sharing" target="_blank" rel="noopener noreferrer" aria-label="CV">
-            <img src="cv_logo.png" alt="CV" class="header-social-img">
+          <a href="/cv" target="_blank" rel="noopener noreferrer">
+            <img src="/cv_logo.png" alt="CV" class="header-social-img">
           </a>
         </div>
       </div>
@@ -65,7 +66,7 @@
       <!-- Project 1: Audio-Haptic -->
       <div class="project-card">
         <div class="project-image-placeholder clickable" onclick="openModal('audioHapticModal')">
-          <img src="audiohaptic_icon.png" alt="Audio-haptic perception icon">
+          <img src="/audiohaptic_icon.png" alt="Audio-haptic perception icon">
         </div>
         <div class="project-details">
           <div class="project-title-row">
@@ -83,7 +84,7 @@
       <!-- Project 2: Play, Pause, Recover -->
       <div class="project-card">
         <div class="project-image-placeholder clickable" onclick="openModal('pppModal')">
-          <img src="PPP_icon.png" alt="Play, Pause, Recover icon">
+          <img src="/PPP_icon.png" alt="Play, Pause, Recover icon">
         </div>
         <div class="project-details">
           <div class="project-title-row">
@@ -101,7 +102,7 @@
       <!-- Project 3: Social Media -->
       <div class="project-card">
         <div class="project-image-placeholder clickable" onclick="openModal('socialMediaModal')">
-          <img src="socialmedia_icon.png" alt="Improving social media icon">
+          <img src="/socialmedia_icon.png" alt="Improving social media icon">
         </div>
         <div class="project-details">
           <div class="project-title-row">
@@ -110,14 +111,16 @@
           </div>
           <div class="project-meta">Columbia University</div>
           <div class="project-role">Co-Corresponding Author</div>
-          <p class="project-authors"><a href="https://arxiv.org/abs/2610.10816" target="_blank" rel="noopener noreferrer">pdf</a></p>
+          <p class="project-description">
+            <a href="https://arxiv.org/abs/2610.10816" target="_blank" rel="noopener noreferrer">pdf</a>
+          </p>
         </div>
       </div>
 
       <!-- Project 4: CitizenAI -->
       <div class="project-card">
         <div class="project-image-placeholder clickable" onclick="openModal('citizenAiModal')">
-          <img src="citizenai_icon.png" alt="CitizenAI icon">
+          <img src="/citizenai_icon.png" alt="CitizenAI icon">
         </div>
         <div class="project-details">
           <div class="project-title-row">
@@ -127,7 +130,7 @@
           <div class="project-meta">NSF / Columbia University / CS3</div>
           <div class="project-role">Research Fellow</div>
           <p class="project-description">
-            <a href="https://www.canva.com/design/DAGhzsCdu3I/_GArmfffv_qu-0edyMiFbg/view?utm_content=DAGhzsCdu3I&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hb4d98f7721" target="_blank" rel="noopener noreferrer">slides</a>
+            <a href="https://static1.squarespace.com/static/631e3a6b49aa512bf1de4b11/t/6897735380fce05566d10770/1754755923260/Press+Release+teLLMe.pdf" target="_blank" rel="noopener noreferrer">press release</a>
           </p>
         </div>
       </div>
@@ -135,7 +138,7 @@
       <!-- Project 5: Sori -->
       <div class="project-card">
         <div class="project-image-placeholder clickable" onclick="openModal('soriModal')">
-          <img src="sori_icon.png" alt="Sori icon">
+          <img src="/sori_icon.png" alt="Sori icon">
         </div>
         <div class="project-details">
           <div class="project-title-row">
@@ -153,7 +156,7 @@
       <!-- Project 6: ModU -->
       <div class="project-card">
         <div class="project-image-placeholder clickable" onclick="openModal('modUModal')">
-          <img src="modu_icon.png" alt="ModU icon">
+          <img src="/modu_icon.png" alt="ModU icon">
         </div>
         <div class="project-details">
           <div class="project-title-row">
@@ -175,7 +178,7 @@
   <div id="posterImageModal" class="modal" role="dialog" aria-modal="true" onclick="closeModal('posterImageModal')">
     <div class="modal-content" onclick="event.stopPropagation()">
       <span class="close-btn" onclick="closeModal('posterImageModal')">&times;</span>
-      <img src="audiohaptic_poster.jpg" alt="Audio-Haptic Poster">
+      <img src="/audiohaptic_poster.jpg" alt="Audio-Haptic Poster">
     </div>
   </div>
 
@@ -184,7 +187,7 @@
     <div class="modal-content video-modal-content" onclick="event.stopPropagation()">
       <span class="close-btn" onclick="closeModal('soriDemoModal')">&times;</span>
       <video id="soriVideo" controls style="width: 100%; border-radius: 6px;">
-        <source src="sori_demo.mp4" type="video/mp4">
+        <source src="/sori_demo.mp4" type="video/mp4">
         Your browser does not support the video tag.
       </video>
     </div>

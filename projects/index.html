@@ -56,10 +56,10 @@
 
   <div class="container">
     
-    <!-- Selected Projects Section -->
+    <!-- Selected Research Section -->
     <section id="projects" class="section">
       <div class="section-header-group">
-        <h2>Selected Projects</h2>
+        <h2>Research</h2>
         <p class="section-subtext">Click on the image or title to learn more about each project :)</p>
       </div>
       
@@ -107,16 +107,17 @@
         <div class="project-details">
           <div class="project-title-row">
             <h3 class="project-title clickable" onclick="openModal('socialMediaModal')">Improving social media for democratic discourse</h3>
-            <span class="project-year">2026</span>
+            <span class="project-year">2025 - Present</span>
           </div>
           <div class="project-meta">Columbia University</div>
           <div class="project-role">Co-Corresponding Author</div>
           <p class="project-description">
-            <a href="https://arxiv.org/abs/2610.10816" target="_blank" rel="noopener noreferrer">pdf</a>
+            <a href="https://arxiv.org/abs/2610.10816" target="_blank" rel="noopener noreferrer">pdf</a> / <a href="https://improving-social-media.vercel.app/#home" target="_blank" rel="noopener noreferrer">website</a>
           </p>
         </div>
       </div>
 
+    
       <!-- Project 4: CitizenAI -->
       <div class="project-card">
         <div class="project-image-placeholder clickable" onclick="openModal('citizenAiModal')">
@@ -135,7 +136,29 @@
         </div>
       </div>
 
-      <!-- Project 5: Sori -->
+          <!-- Selected Projects Section -->
+    <section id="projects" class="section">
+      <div class="section-header-group">
+        <h2>Projects</h2>
+        <p class="section-subtext">A mix of passion projects and pitch competitions!</p>
+      </div>
+
+      <!-- Project 5: Match -->
+      <div class="project-card">
+        <div class="project-image-placeholder clickable" onclick="openModal('matchModal')">
+          <img src="/match.png" alt="Match: genAI for cognitive games icon">
+        </div>
+        <div class="project-details">
+          <div class="project-title-row">
+            <h3 class="project-title clickable" onclick="openModal('matchModal')">Match — GenAI for cognitive games</h3>
+            <span class="project-year">2026 - Present</span>
+          </div>
+          <div class="project-meta">Columbia University</div>
+          <div class="project-role"><em>Collaborator</em></div>
+        </div>
+      </div>
+
+      <!-- Project 6: Sori -->
       <div class="project-card">
         <div class="project-image-placeholder clickable" onclick="openModal('soriModal')">
           <img src="/sori_icon.png" alt="Sori icon">
@@ -153,7 +176,7 @@
         </div>
       </div>
 
-      <!-- Project 6: ModU -->
+      <!-- Project 7: ModU -->
       <div class="project-card">
         <div class="project-image-placeholder clickable" onclick="openModal('modUModal')">
           <img src="/modu_icon.png" alt="ModU icon">
@@ -252,7 +275,7 @@
       <div class="modal-meta-bar">
         <span><strong>Role:</strong> Co-Corresponding Author</span> | 
         <span><strong>Venue:</strong> Columbia University</span> | 
-        <span><strong>Year:</strong> 2026</span>
+        <span><strong>Year:</strong> 2025-Present</span>
       </div>
       <div class="modal-body">
         <h3>Overview</h3>
@@ -288,7 +311,27 @@
     </div>
   </div>
 
-  <!-- Modal 5: Sori -->
+  <!-- Modal 5: Match -->
+  <div id="matchModal" class="modal" role="dialog" aria-modal="true" onclick="closeModal('matchModal')">
+    <div class="modal-content project-modal-content" onclick="event.stopPropagation()">
+      <span class="close-btn" onclick="closeModal('matchModal')">&times;</span>
+      <h2>Match: genAI for cognitive games</h2>
+      <div class="modal-meta-bar">
+        <span><strong>Role:</strong> <em>Collaborator</em></span> | 
+        <span><strong>Venue:</strong> Columbia University</span> | 
+        <span><strong>Year:</strong> 2026</span>
+      </div>
+      <div class="modal-body">
+        <h3>Overview</h3>
+        <p>
+          Current cognitive games rely on static tasks that can quickly lead to familiarity effects that lower engagement and compromise long-term accuracy. Because they rely on fixed asset sets, they only capture a snapshot of a user’s cognitive profile. Using generative AI, probabilistic modeling, and adaptive testing, we’re developing a cognitive game for children with Autism Spectrum Disorder (ASD). By generating personalized visual stimuli, the game maintains continuous novelty, keeps users engaged, and tracks how cognitive abilities evolve over time.
+        </p>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Modal 6: Sori -->
   <div id="soriModal" class="modal" role="dialog" aria-modal="true" onclick="closeModal('soriModal')">
     <div class="modal-content project-modal-content" onclick="event.stopPropagation()">
       <span class="close-btn" onclick="closeModal('soriModal')">&times;</span>
@@ -321,7 +364,7 @@
     </div>
   </div>
 
-  <!-- Modal 6: ModU -->
+  <!-- Modal 7: ModU -->
   <div id="modUModal" class="modal" role="dialog" aria-modal="true" onclick="closeModal('modUModal')">
     <div class="modal-content project-modal-content" onclick="event.stopPropagation()">
       <span class="close-btn" onclick="closeModal('modUModal')">&times;</span>

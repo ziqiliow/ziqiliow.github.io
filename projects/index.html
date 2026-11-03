@@ -15,6 +15,198 @@
   
   <link rel="stylesheet" href="/style.css">
   <link rel="canonical" href="https://ziqiliow.com/projects">
+
+  <style>
+    /* Tag Filter Bar Container */
+    .filter-bar-container {
+      width: 100%;
+      max-width: 860px;
+      margin: 20px auto 15px auto;
+      padding: 0 15px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+      box-sizing: border-box;
+    }
+
+    .filter-label {
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #666;
+      margin-right: 4px;
+    }
+
+    /* Tag Pills (Interactive Filter Bar) */
+    .tag-pill {
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 500;
+      padding: 5px 14px;
+      border-radius: 20px;
+      border: 1px solid transparent;
+      cursor: pointer;
+      user-select: none;
+      transition: all 0.2s ease;
+      opacity: 0.65;
+      display: inline-flex;
+      align-items: center;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    }
+
+    .tag-pill:hover {
+      opacity: 0.85;
+      transform: translateY(-1px);
+    }
+
+    .tag-pill.active {
+      opacity: 1;
+      font-weight: 600;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+      border-color: rgba(0,0,0,0.15);
+    }
+
+    /* Color definitions for Tag Pills */
+    .tag-pill[data-tag="all"] { background-color: #e2e8f0; color: #1e293b; }
+    .tag-pill[data-tag="Well-being"] { background-color: #ffb0ac; color: #4a1512; }
+    .tag-pill[data-tag="Accessibility"] { background-color: #fff59f; color: #4a4300; }
+    .tag-pill[data-tag="Human-centered AI"] { background-color: #a2a4f7; color: #1b1b4d; }
+    .tag-pill[data-tag="Social Computing"] { background-color: #9fdfff; color: #08344d; }
+    .tag-pill[data-tag="Social Impact"] { background-color: #a4e6a1; color: #0d380e; }
+
+    /* Project Card Layout Restructuring */
+    .project-card {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 24px;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    .project-title-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    width: 100%;
+    margin: 0 0 3px 0;     /* small gap below the title */
+    padding: 0;
+}
+
+    .project-title-header h3 {
+      margin: 0;
+      font-family: 'Instrument Serif', serif;
+      font-size: 1.25rem;
+      font-weight: 400;
+      color: #111;
+      line-height: 1.1;
+    }
+
+    .project-year {
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.95rem;
+      color: #777;
+    }
+
+    .project-body-row {
+      display: flex;
+      flex-direction: row;
+      align-items: stretch;
+      gap: 20px;
+      width: 100%;
+    }
+
+    /* Image Thumbnail Container */
+    .project-image-placeholder {
+      width: 160px;
+      height: 112px;
+      flex-shrink: 0;
+      border-radius: 6px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #f5f5f5;
+    }
+
+    .project-image-placeholder img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Side details block */
+    .project-details-side {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 112px;
+      box-sizing: border-box;
+    }
+
+    .project-info-text {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .project-meta {
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.95rem;
+      color: #333;
+      margin: 0;
+      line-height: 1.25;
+    }
+
+    .project-role {
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.85rem;
+      font-style: italic;
+      color: #444;
+      margin: 0;
+      line-height: 1.25;
+    }
+
+    .project-links {
+      font-family: 'Raleway', sans-serif;
+      font-size: 0.85rem;
+      margin: 0;
+      line-height: 1.25;
+    }
+
+    .project-links a {
+      color: #111;
+      text-decoration: underline;
+    }
+
+    /* Tags displayed on individual Project Cards */
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 8px;
+      margin-bottom: 0;
+    }
+
+    .card-tag {
+      font-family: 'Raleway', raleway;
+      font-size: 0.85rem;
+      padding: 3px 14px;
+      border-radius: 18px;
+      display: inline-block;
+      line-height: 1.2;
+      margin: 0;
+    }
+
+    .card-tag.tag-wellbeing { background-color: #ffb0ac; color: #3a0d0a; }
+    .card-tag.tag-accessibility { background-color: #fff59f; color: #3a3400; }
+    .card-tag.tag-hcai { background-color: #a2a4f7; color: #111347; }
+    .card-tag.tag-socialcomp { background-color: #9fdfff; color: #042438; }
+    .card-tag.tag-socialimpact { background-color: #a4e6a1; color: #072b08; }
+
+    .project-card.is-hidden {
+      display: none !important;
+    }
+  </style>
 </head>
 <body>
 
@@ -48,155 +240,226 @@
     <nav class="navbar">
       <div class="nav-content">
         <a href="/">Home</a>
-        <a href="/projects" class="active">Projects</a>
+        <a href="/Work" class="active">Work</a>
         <a href="https://medium.com/@ziqiliow" target="_blank" rel="noopener noreferrer">Writing</a>
       </div>
     </nav>
   </header>
 
+  <!-- Tag Filter Bar -->
+  <div class="filter-bar-container">
+    <span class="filter-label">Filter:</span>
+    <button class="tag-pill active" data-tag="all" onclick="toggleTag('all')">All</button>
+    <button class="tag-pill" data-tag="Well-being" onclick="toggleTag('Well-being')">Well-being</button>
+    <button class="tag-pill" data-tag="Accessibility" onclick="toggleTag('Accessibility')">Accessibility</button>
+    <button class="tag-pill" data-tag="Human-centered AI" onclick="toggleTag('Human-centered AI')">Human-centered AI</button>
+    <button class="tag-pill" data-tag="Social Computing" onclick="toggleTag('Social Computing')">Social Computing</button>
+    <button class="tag-pill" data-tag="Social Impact" onclick="toggleTag('Social Impact')">Social Impact</button>
+  </div>
+
   <div class="container">
     
     <!-- Selected Research Section -->
-    <section id="projects" class="section">
+    <section id="research-section" class="section">
       <div class="section-header-group">
         <h2>Research</h2>
         <p class="section-subtext">Click on the image or title to learn more about each project :)</p>
       </div>
       
       <!-- Project 1: Audio-Haptic -->
-      <div class="project-card">
-        <div class="project-image-placeholder clickable" onclick="openModal('audioHapticModal')">
-          <img src="/audiohaptic_icon.png" alt="Audio-haptic perception icon">
+      <div class="project-card" data-tags="Accessibility,Human-centered AI,Social Impact">
+        <div class="project-title-header">
+          <h3 class="project-title clickable" onclick="openModal('audioHapticModal')">Audio-haptic perception for blind and low-vision users</h3>
+          <span class="project-year">2025 - Present</span>
         </div>
-        <div class="project-details">
-          <div class="project-title-row">
-            <h3 class="project-title clickable" onclick="openModal('audioHapticModal')">Audio-haptic perception for blind and low-vision users</h3>
-            <span class="project-year">2025 - Present</span>
+        <div class="project-body-row">
+          <div class="project-image-placeholder clickable" onclick="openModal('audioHapticModal')">
+            <img src="/audiohaptic_icon.png" alt="Audio-haptic perception icon">
           </div>
-          <div class="project-meta">NSF-ARNI / Columbia University / CUNY</div>
-          <div class="project-role">Research Engineer</div>
-          <p class="project-description">
-            <a href="javascript:void(0)" onclick="openModal('posterImageModal')">poster</a>
-          </p>
+          <div class="project-details-side">
+            <div class="project-info-text">
+              <div class="project-meta">NSF-ARNI / Columbia University / CUNY</div>
+              <div class="project-role">Research Engineer</div>
+              <p class="project-links">
+                <a href="javascript:void(0)" onclick="openModal('posterImageModal')">poster</a>
+              </p>
+            </div>
+            <div class="project-tags">
+              <span class="card-tag tag-accessibility">Accessibility</span>
+              <span class="card-tag tag-hcai">Human-centered AI</span>
+              <span class="card-tag tag-socialimpact">Social Impact</span>
+            </div>
+          </div>
         </div>
       </div>
 
       <!-- Project 2: Play, Pause, Recover -->
-      <div class="project-card">
-        <div class="project-image-placeholder clickable" onclick="openModal('pppModal')">
-          <img src="/PPP_icon.png" alt="Play, Pause, Recover icon">
+      <div class="project-card" data-tags="Well-being,Human-centered AI">
+        <div class="project-title-header">
+          <h3 class="project-title clickable" onclick="openModal('pppModal')">Play, pause, recover</h3>
+          <span class="project-year">2026</span>
         </div>
-        <div class="project-details">
-          <div class="project-title-row">
-            <h3 class="project-title clickable" onclick="openModal('pppModal')">Play, Pause, Recover</h3>
-            <span class="project-year">2026</span>
+        <div class="project-body-row">
+          <div class="project-image-placeholder clickable" onclick="openModal('pppModal')">
+            <img src="/PPP_icon.png" alt="Play, Pause, Recover icon">
           </div>
-          <div class="project-meta">Columbia University</div>
-          <div class="project-role">Co-Author</div>
-          <p class="project-description">
-            <a href="https://drive.google.com/file/d/1htiqvMEo8HlAUTI6R_zsqLbRY6SJNgIN/view?usp=sharing" target="_blank" rel="noopener noreferrer">pdf</a>
-          </p>
+          <div class="project-details-side">
+            <div class="project-info-text">
+              <div class="project-meta">Columbia University</div>
+              <div class="project-role">Co-Author</div>
+              <p class="project-links">
+                <a href="https://drive.google.com/file/d/1htiqvMEo8HlAUTI6R_zsqLbRY6SJNgIN/view?usp=sharing" target="_blank" rel="noopener noreferrer">pdf</a>
+              </p>
+            </div>
+            <div class="project-tags">
+              <span class="card-tag tag-wellbeing">Well-being</span>
+              <span class="card-tag tag-hcai">Human-centered AI</span>
+            </div>
+          </div>
         </div>
       </div>
 
       <!-- Project 3: Social Media -->
-      <div class="project-card">
-        <div class="project-image-placeholder clickable" onclick="openModal('socialMediaModal')">
-          <img src="/socialmedia_icon.png" alt="Improving social media icon">
+      <div class="project-card" data-tags="Human-centered AI,Social Computing,Social Impact">
+        <div class="project-title-header">
+          <h3 class="project-title clickable" onclick="openModal('socialMediaModal')">Improving social media for democratic discourse</h3>
+          <span class="project-year">2025 - Present</span>
         </div>
-        <div class="project-details">
-          <div class="project-title-row">
-            <h3 class="project-title clickable" onclick="openModal('socialMediaModal')">Improving social media for democratic discourse</h3>
-            <span class="project-year">2025 - Present</span>
+        <div class="project-body-row">
+          <div class="project-image-placeholder clickable" onclick="openModal('socialMediaModal')">
+            <img src="/socialmedia_icon.png" alt="Improving social media icon">
           </div>
-          <div class="project-meta">Columbia University</div>
-          <div class="project-role">Co-Corresponding Author</div>
-          <p class="project-description">
-            <a href="https://arxiv.org/abs/2610.10816" target="_blank" rel="noopener noreferrer">pdf</a> / <a href="https://improving-social-media.vercel.app/#home" target="_blank" rel="noopener noreferrer">website</a>
-          </p>
+          <div class="project-details-side">
+            <div class="project-info-text">
+              <div class="project-meta">Columbia University</div>
+              <div class="project-role">Co-Corresponding Author</div>
+              <p class="project-links">
+                <a href="https://arxiv.org/abs/2610.10816" target="_blank" rel="noopener noreferrer">pdf</a> / <a href="https://improving-social-media.vercel.app/#home" target="_blank" rel="noopener noreferrer">website</a>
+              </p>
+            </div>
+            <div class="project-tags">
+              <span class="card-tag tag-hcai">Human-centered AI</span>
+              <span class="card-tag tag-socialcomp">Social Computing</span>
+              <span class="card-tag tag-socialimpact">Social Impact</span>
+            </div>
+          </div>
         </div>
       </div>
 
-    
       <!-- Project 4: CitizenAI -->
-      <div class="project-card">
-        <div class="project-image-placeholder clickable" onclick="openModal('citizenAiModal')">
-          <img src="/citizenai_icon.png" alt="CitizenAI icon">
+      <div class="project-card" data-tags="Human-centered AI,Social Computing,Social Impact">
+        <div class="project-title-header">
+          <h3 class="project-title clickable" onclick="openModal('citizenAiModal')">CitizenAI</h3>
+          <span class="project-year">2026 - Present</span>
         </div>
-        <div class="project-details">
-          <div class="project-title-row">
-            <h3 class="project-title clickable" onclick="openModal('citizenAiModal')">CitizenAI</h3>
-            <span class="project-year">2026 - Present</span>
+        <div class="project-body-row">
+          <div class="project-image-placeholder clickable" onclick="openModal('citizenAiModal')">
+            <img src="/citizenai_icon.png" alt="CitizenAI icon">
           </div>
-          <div class="project-meta">NSF / Columbia University / CS3</div>
-          <div class="project-role">Research Fellow</div>
-          <p class="project-description">
-            <a href="https://static1.squarespace.com/static/631e3a6b49aa512bf1de4b11/t/6897735380fce05566d10770/1754755923260/Press+Release+teLLMe.pdf" target="_blank" rel="noopener noreferrer">press release</a>
-          </p>
+          <div class="project-details-side">
+            <div class="project-info-text">
+              <div class="project-meta">NSF / Columbia University / CS3</div>
+              <div class="project-role">Research Fellow</div>
+              <p class="project-links">
+                <a href="https://static1.squarespace.com/static/631e3a6b49aa512bf1de4b11/t/6897735380fce05566d10770/1754755923260/Press+Release+teLLMe.pdf" target="_blank" rel="noopener noreferrer">press release</a>
+              </p>
+            </div>
+            <div class="project-tags">
+              <span class="card-tag tag-hcai" >Human-centered AI</span>
+              <span class="card-tag tag-socialcomp">Social Computing</span>
+              <span class="card-tag tag-socialimpact">Social Impact</span>
+            </div>
+          </div>
         </div>
       </div>
+    </section>
 
-          <!-- Selected Projects Section -->
-    <section id="projects" class="section">
+    <!-- Selected Projects Section -->
+    <section id="other-projects-section" class="section">
       <div class="section-header-group">
         <h2>Projects</h2>
         <p class="section-subtext">A mix of passion projects and pitch competitions!</p>
       </div>
 
       <!-- Project 5: Match -->
-      <div class="project-card">
-        <div class="project-image-placeholder clickable" onclick="openModal('matchModal')">
-          <img src="/match.png" alt="Match: genAI for cognitive games icon">
+      <div class="project-card" data-tags="Well-being,Accessibility,Human-centered AI">
+        <div class="project-title-header">
+          <h3 class="project-title clickable" onclick="openModal('matchModal')">Match — GenAI for cognitive games</h3>
+          <span class="project-year">2026 - Present</span>
         </div>
-        <div class="project-details">
-          <div class="project-title-row">
-            <h3 class="project-title clickable" onclick="openModal('matchModal')">Match — GenAI for cognitive games</h3>
-            <span class="project-year">2026 - Present</span>
+        <div class="project-body-row">
+          <div class="project-image-placeholder clickable" onclick="openModal('matchModal')">
+            <img src="/match.png" alt="Match: genAI for cognitive games icon">
           </div>
-          <div class="project-meta">Columbia University</div>
-          <div class="project-role"><em>Collaborator</em></div>
+          <div class="project-details-side">
+            <div class="project-info-text">
+              <div class="project-meta">Columbia University</div>
+              <div class="project-role"><em>Collaborator</em></div>
+            </div>
+            <div class="project-tags">
+              <span class="card-tag tag-wellbeing">Well-being</span>
+              <span class="card-tag tag-accessibility">Accessibility</span>
+              <span class="card-tag tag-hcai">Human-centered AI</span>
+            </div>
+          </div>
         </div>
       </div>
 
       <!-- Project 6: Sori -->
-      <div class="project-card">
-        <div class="project-image-placeholder clickable" onclick="openModal('soriModal')">
-          <img src="/sori_icon.png" alt="Sori icon">
+      <div class="project-card" data-tags="Well-being,Accessibility,Human-centered AI">
+        <div class="project-title-header">
+          <h3 class="project-title clickable" onclick="openModal('soriModal')">Sori — AI for pediatric speech therapy</h3>
+          <span class="project-year">2025</span>
         </div>
-        <div class="project-details">
-          <div class="project-title-row">
-            <h3 class="project-title clickable" onclick="openModal('soriModal')">Sori — AI for pediatric speech therapy</h3>
-            <span class="project-year">2025</span>
+        <div class="project-body-row">
+          <div class="project-image-placeholder clickable" onclick="openModal('soriModal')">
+            <img src="/sori_icon.png" alt="Sori icon">
           </div>
-          <div class="project-meta">Columbia Business School AI Impact Competition</div>
-          <div class="project-role">Top 15% Finalist</div>
-          <p class="project-description">
-            <a href="javascript:void(0)" onclick="openModal('soriDemoModal')">demo</a>
-          </p>
+          <div class="project-details-side">
+            <div class="project-info-text">
+              <div class="project-meta">Columbia Business School AI Impact Competition</div>
+              <div class="project-role">Top 15% Finalist</div>
+              <p class="project-links">
+                <a href="javascript:void(0)" onclick="openModal('soriDemoModal')">demo</a>
+              </p>
+            </div>
+            <div class="project-tags">
+              <span class="card-tag tag-wellbeing">Well-being</span>
+              <span class="card-tag tag-accessibility">Accessibility</span>
+              <span class="card-tag tag-hcai">Human-centered AI</span>
+            </div>
+          </div>
         </div>
       </div>
 
       <!-- Project 7: ModU -->
-      <div class="project-card">
-        <div class="project-image-placeholder clickable" onclick="openModal('modUModal')">
-          <img src="/modu_icon.png" alt="ModU icon">
+      <div class="project-card" data-tags="Well-being,Accessibility,Human-centered AI">
+        <div class="project-title-header">
+          <h3 class="project-title clickable" onclick="openModal('modUModal')">ModU — AI for PTSD</h3>
+          <span class="project-year">2024</span>
         </div>
-        <div class="project-details">
-          <div class="project-title-row">
-            <h3 class="project-title clickable" onclick="openModal('modUModal')">ModU — AI for PTSD</h3>
-            <span class="project-year">2024</span>
+        <div class="project-body-row">
+          <div class="project-image-placeholder clickable" onclick="openModal('modUModal')">
+            <img src="/modu_icon.png" alt="ModU icon">
           </div>
-          <div class="project-meta">Global Learning Case Competition (GLCC)</div>
-          <div class="project-role">1st Place / 72 teams and 30+ countries</div>
+          <div class="project-details-side">
+            <div class="project-info-text">
+              <div class="project-meta">Global Learning Case Competition (GLCC)</div>
+              <div class="project-role">1st Place / 72 teams and 30+ countries</div>
+            </div>
+            <div class="project-tags">
+              <span class="card-tag tag-wellbeing">Well-being</span>
+              <span class="card-tag tag-accessibility">Accessibility</span>
+              <span class="card-tag tag-hcai">Human-centered AI</span>
+            </div>
+          </div>
         </div>
       </div>
-
     </section>
 
   </div>
 
   <!-- MODALS SECTION -->
-
   <!-- Modal 0: Audio-Haptic Poster Image Pop-Up -->
   <div id="posterImageModal" class="modal" role="dialog" aria-modal="true" onclick="closeModal('posterImageModal')">
     <div class="modal-content video-modal-content" onclick="event.stopPropagation()">
@@ -330,7 +593,6 @@
     </div>
   </div>
 
-
   <!-- Modal 6: Sori -->
   <div id="soriModal" class="modal" role="dialog" aria-modal="true" onclick="closeModal('soriModal')">
     <div class="modal-content project-modal-content" onclick="event.stopPropagation()">
@@ -414,6 +676,69 @@
   </div>
 
   <script>
+    // Multi-select Tag Filtering Script
+    let activeTags = new Set(['all']);
+
+    function toggleTag(tagName) {
+      const allPill = document.querySelector('.tag-pill[data-tag="all"]');
+      
+      if (tagName === 'all') {
+        activeTags.clear();
+        activeTags.add('all');
+        document.querySelectorAll('.tag-pill').forEach(pill => {
+          pill.classList.remove('active');
+        });
+        allPill.classList.add('active');
+      } else {
+        if (activeTags.has('all')) {
+          activeTags.delete('all');
+          allPill.classList.remove('active');
+        }
+
+        const clickedPill = document.querySelector(`.tag-pill[data-tag="${tagName}"]`);
+        
+        if (activeTags.has(tagName)) {
+          activeTags.delete(tagName);
+          clickedPill.classList.remove('active');
+        } else {
+          activeTags.add(tagName);
+          clickedPill.classList.add('active');
+        }
+
+        // If no topic tags are active, default back to 'All'
+        if (activeTags.size === 0) {
+          activeTags.add('all');
+          allPill.classList.add('active');
+        }
+      }
+
+      filterProjects();
+    }
+
+    function filterProjects() {
+      const projects = document.querySelectorAll('.project-card');
+
+      projects.forEach(project => {
+        if (activeTags.has('all')) {
+          project.classList.remove('is-hidden');
+          return;
+        }
+
+        const projectTagsAttr = project.getAttribute('data-tags');
+        if (!projectTagsAttr) return;
+
+        const projectTagList = projectTagsAttr.split(',');
+        const isMatch = Array.from(activeTags).some(tag => projectTagList.includes(tag));
+
+        if (isMatch) {
+          project.classList.remove('is-hidden');
+        } else {
+          project.classList.add('is-hidden');
+        }
+      });
+    }
+
+    // Modal Operations
     function openModal(id) {
       const modal = document.getElementById(id);
       if (modal) {

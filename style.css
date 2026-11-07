@@ -524,4 +524,22 @@ a:active {
     gap: 4px;
     margin-bottom: 16px;
   }
+
+}
+.project-links a {
+  display: inline-block;
+  border: 1px solid black; /* Thin black outline */
+  padding: 4px 8px;        /* Creates the box spacing around the text */
+  text-decoration: none;   /* Removes the default underline */
+  color: inherit;          /* Keeps your current text color */
+  margin-right: 6px;       /* Adds a little space between multiple links */
+  border-radius: 3px;      /* Optional: slightly rounds the box corners */
+  text-decoration: none !important;
+}
+
+/* Optional: Add a slight background color when hovered over */
+.project-links a:hover {
+  background-color: black !important; /* Fills the box with black */
+  color: white !important;            /* Changes the text to white */
+  text-decoration: none !important;   /* Keeps the underline hidden */
 }
